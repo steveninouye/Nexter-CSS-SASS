@@ -1,0 +1,43 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  /* root font-size is set in the html like here */
+  /* you want to set it to a percentage instead of pixel size because some users adjust their font size in 
+  order to see better and if we set it to a pixel 
+  size, users won't be able to adjust the font size themselves if they have a hard time seeing */
+  /* font-size: 10px; */
+  /* default font size is 16px */
+  font-size: 62.5%;
+
+  @include respond(big-desktop) {
+    font-size: 75%;
+  }
+
+  @include respond(tab-land) {
+    font-size: 56.25%
+  }
+  
+  @include respond(tab-port) {
+    font-size: 50%;
+  }
+  
+  @include respond(phone) {
+    font-size: 50%;
+  }
+
+}
+
+body {
+  box-sizing: border-box;
+  padding: 3rem;
+
+  @include respond(tab-port) {
+    padding: 0;
+  }
+}
